@@ -2,13 +2,13 @@ const fs = require('fs');
 
 function readFileContent(filePath) {
     // Implementation
-    fs.readFile(filePath, 'utf8', (err, data) => {
+    fs.readFile(filePath, 'utf8', (err, data) =>{
         if (err) {
           console.error(`Error reading file: ${err.message}`);
         } else {
           console.log(`File content:\n${data}`);
         }
-      });
+    });
 
 }
 readFileContent('test-files/file1.txt');
