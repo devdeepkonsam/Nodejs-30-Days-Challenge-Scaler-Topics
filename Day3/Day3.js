@@ -12,7 +12,7 @@ function executeCommand(command) {
 }
 
 
-executeCommand('dir');
+executeCommand('ls -la');
 // Expected Output: (output of ls -la)
 
 executeCommand('echo "Hello, Node.js!"');
