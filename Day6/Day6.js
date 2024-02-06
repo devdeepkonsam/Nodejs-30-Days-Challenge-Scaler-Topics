@@ -10,7 +10,6 @@ const port = process.env.PORT || 3000;
 function greetHandler(req, res) {
     // Your implementation here
     const name = req.query.name;
-    console.log(name)
     if (name) {
         res.send(`Hello, ${name}!`);
     } else {
