@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+app.use(express.json());
 
 
 /**
@@ -8,17 +9,28 @@ const port = process.env.PORT || 3000;
  * @param {Object} req - Express request object
  * @param {Object} res - Express response object
  */
-function positiveIntegerHandler(req, res) {
+function positiveIntegerHandler(req, res, next) {
     // Your implementation here
     const number = parseInt(req.query.number);
-    if(Number.isInteger(number) && number > 0){
-        res.status(200).send(`{"Message" : "Succesful"}`);
-    } else {
-        res.status(400).send(`{"Message" : "Error enter a positive number"}`)
-    }
+    if (number <= 0 || !Number.isInteger(number)) {
+        next(new PositiveIntegerError());
+      } else {
+        res.json({ message: 'Successful' });
+      }
 }
+class PositiveIntegerError extends Error {}
+
+function errorHandler(err, req, res, next) {
+    if (err instanceof PositiveIntegerError) {
+      res.status(400).json({ error: 'Try again with positive number' });
+    } else {
+      next(err);
+    }
+  }
 
 app.get('/positive',positiveIntegerHandler);
+app.use(errorHandler);
+
 
 app.listen(port, ()=>{
     console.log(`http://localhost:${port}`);
