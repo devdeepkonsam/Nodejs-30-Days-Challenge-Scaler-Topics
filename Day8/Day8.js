@@ -3,7 +3,6 @@ const app = express();
 const port = process.env.PORT || 3000;
 app.use(express.json());
 
-
 /**
  * Express route to handle requests with a positive integer parameter
  * @param {Object} req - Express request object
