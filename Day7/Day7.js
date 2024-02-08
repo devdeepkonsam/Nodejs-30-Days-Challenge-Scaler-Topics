@@ -12,8 +12,8 @@ const port = process.env.PORT || 3000
 function requestLoggerMiddleware(req, res, next) {
     // Your implementation here
     const timestamp = new Date().toISOString();
-    const method = req.method;
-    console.log(`${timestamp} - ${method} request received`);
+    const HTTP_method = req.method;
+    console.log(`${timestamp} - ${HTTP_method} request received`);
     next();
 }
 
