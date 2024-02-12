@@ -5,8 +5,8 @@ const port = process.env.PORT || 3000;
 
 let requestno = {};
 setInterval(() =>{
-    request = {};
-}, 100);
+    requestno = {};
+}, 1000);
 /**
  * Rate-limiting middleware for Express
  * @param {Object} req - Express request object
