@@ -13,7 +13,7 @@ function setupWebSocket(server) {
   wss.on('connection', function connection(ws) {
     console.log('Client connected');
     ws.on('message', function incoming(message) {
-      console.log('Received message:', message);
+      console.log('Received message:', message.toString());
       ws.send(message); 
     });
   });
