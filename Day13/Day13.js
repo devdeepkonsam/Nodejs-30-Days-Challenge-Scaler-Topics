@@ -1,7 +1,7 @@
 const WebSocket = require('ws');
 const express = require('express');
 const http = require('http');
-
+const port = process.env.PORT || 3000;
 
 /**
  * WebSocket server for Express
@@ -28,9 +28,9 @@ function startServer() {
   app.get('/websocket', (req, res) => {
     res.sendFile(__dirname + '/index.html');
   });
-
-  server.listen(3000, () => {
-    console.log('Server started on port 3000');
+ 
+  server.listen(port , () => {
+    console.log(`http://localhost:${port}`);
   });
 }
 
