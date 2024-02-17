@@ -23,4 +23,4 @@ function addUserToDatabase(user) {
     }
 }
 
-addUserToDatabase({ username: 'john_doe', email: 'john@example.com' });
+addUserToDatabase({ username: 'dev_raptor', email: 'dev@scaler.com' });
