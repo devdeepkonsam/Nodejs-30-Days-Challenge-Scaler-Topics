@@ -8,9 +8,9 @@ const port = process.env.PORT || 3000;
  */
 function connectToMongoDB() {
   // Your implementation here
-  mongoose.connect('mongodb://127.0.0.1:3000/mydata_test16', { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(()=> console.log(`You have connected with the database`))
-  .catch(err=> console.error('you have not connected with server', err));
+  mongoose.connect('mongodb://127.0.0.1/myTestdata')
+  .then(()=> console.log("Successfully connected to the database"))
+  .catch(err=> console.error('Unsuccesful to connect',err));
 }
 
 
