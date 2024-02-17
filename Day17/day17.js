@@ -5,7 +5,6 @@ const userSchema = new mongoose.Schema({
   email: String
 });
 const User = mongoose.model('User', userSchema);
-
 mongoose.connect('mongodb://localhost:27017/myTestdata');
 
 /**
