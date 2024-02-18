@@ -5,7 +5,6 @@ const port = process.env.PORT || 3000;
 
 const app = express();
 
-// Connect to MongoDB
 mongoose.connect('mongodb://127.0.0.1/testdatabase', {
   useNewUrlParser: true,
   useUnifiedTopology: true
@@ -16,8 +15,13 @@ mongoose.connect('mongodb://127.0.0.1/testdatabase', {
 });
 
 
-
+/**
+ * Express route to get all users from MongoDB
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ */
 async function getAllUsers(req, res) {
+  // Your implementation here
   try {
     const users = await User.find({});
     res.json(users);
