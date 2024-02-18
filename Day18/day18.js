@@ -1,6 +1,9 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const User = require('./models/User');
+const port = process.env.PORT || 3000;
+
+const app = express();
 
 // Connect to MongoDB
 mongoose.connect('mongodb://127.0.0.1/testdatabase', {
@@ -12,7 +15,6 @@ mongoose.connect('mongodb://127.0.0.1/testdatabase', {
   console.error("MongoDB connection error:", error);
 });
 
-const app = express();
 
 
 async function getAllUsers(req, res) {
@@ -25,11 +27,8 @@ async function getAllUsers(req, res) {
   }
 }
 
-// Route to get all users
 app.get('/users', getAllUsers);
 
-// Start the server
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
