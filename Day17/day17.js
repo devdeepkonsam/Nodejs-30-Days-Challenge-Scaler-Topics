@@ -5,7 +5,7 @@ const userSchema = new mongoose.Schema({
   email: String
 });
 const User = mongoose.model('User', userSchema);
-mongoose.connect('mongodb://localhost:27017/myTestdata');
+mongoose.connect('mongodb://127.0.0.1/testdatabase');
 
 /**
  * Adds a new user to the MongoDB database
@@ -23,3 +23,5 @@ function addUserToDatabase(user) {
 }
 
 addUserToDatabase({ username: 'dev_raptor', email: 'dev@scaler.com' });
+addUserToDatabase({ username: 'john', email: 'john@scaler.com' });
+addUserToDatabase({ username: 'hazzle', email: 'hazzle@scaler.com' })

@@ -8,7 +8,7 @@ const port = process.env.PORT || 3000;
  */
 function connectToMongoDB() {
   // Your implementation here
-  mongoose.connect('mongodb://127.0.0.1/myTestdata')
+  mongoose.connect('mongodb://127.0.0.1/testdatabase')
   .then(()=> console.log("Successfully connected to the database"))
   .catch(err=> console.error('Unsuccesful to connect',err));
 }
