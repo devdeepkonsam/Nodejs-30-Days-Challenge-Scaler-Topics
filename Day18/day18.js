@@ -30,5 +30,5 @@ async function getAllUsers(req, res) {
 app.get('/users', getAllUsers);
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`http://localhost:${port}`);
 });
